@@ -1,3 +1,13 @@
+```diff
+! This paper is under review on the experimental track of the Journal of Visualization and Interaction.
+Authors: @ginihumer
+OC: @mjskay
+AE: TBD
+R1: TBD
+R2: TBD
+R3: TBD
+```
+
 # Understanding and Comparing Latent Space Characteristics of Multi-Modal Models
 ## Exploring the Latent Space of CLIP-like Models Using Inter-Modal Pairs
 

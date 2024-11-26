@@ -67,7 +67,7 @@ class HoverWidget {
         this.div.appendChild(this.div1);
         this.div.appendChild(this.div2);
         this.div.appendChild(this.div3);
-        this.div.style.maxHeight = height + 'px';
+        this.div.style.height = height + 'px';
     }
 
     update1(type, idx) {
@@ -91,7 +91,16 @@ class HoverWidget {
             div.innerHTML = '';
             div.appendChild(img);
         } else if (type == 'Text') {
-            div.innerHTML = this.text_list[idx];
+            // div.innerHTML = this.text_list[idx];
+            let text = this.text_list[idx];
+            let mol = RDKitModule.get_mol(text);
+            // check if text is a SMILES string
+            if(mol != null){
+                div.innerHTML = "<div title='" + text + "'>" + mol.get_svg() + "</div>";
+            }else{
+                div.innerHTML = text;
+            }
+
         } else if (type == 'Audio') {
             const wav = document.createElement('audio');
             wav.controls = true;
